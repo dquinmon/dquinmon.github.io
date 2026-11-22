@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Procedural Generation | Daniel Quintana</title>
+<meta name="description" content="A breakdown of how I designed and developed procedural generation for Dungeon Catering">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <button class="menu-btn" aria-expanded="false" aria-controls="menu-panel">Menu</button>
+  <a class="logo" href="index.html" aria-label="Home"><img src="assets/img/logo.png" alt="DQ logo"></a>
+  <nav class="top-nav" aria-label="Main">
+    <a href="proceduralgeneration.html" class="active">Procedural Generation</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<div id="menu-panel" class="menu-panel" hidden>
+  <a href="index.html">Home</a>
+  <a href="proceduralgeneration.html">Procedural Generation</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+<main>
+<article class="project">
+<p class="crumb">Procedural Generation</p>
+<h1>Procedural Generation</h1>
+<p class="lede">A breakdown on how I designed and developed procedural generation for Dungeon Catering</p>
+<h2>Features Overview</h2>
+<figure class=""><img src="assets/img/procgen-grid.jpg" alt="Grid representation of the map" loading="lazy"></figure>
+<h2>Setting the map</h2>
+<p>When starting to think about how to create procedural generation the first thing I thought about was figuring out where the rooms would be located, for this I used a 2D array to have as a representation of the map where the center of the array would be the center of the map</p>
+<h2>First generation</h2>
+<p>For the first generation I created a room on every direction from the beginning and then, checked the one that was closest and it created all possible rooms. After working on it, I realized I had found myself creating the exact same map over and over again. I later found out I had stumbled upon the basics for the dijkstra pathfinding algorithm and the star I created in my map was just what you can see on this algorithm.</p>
+<div class="pair"><figure class=""><img src="assets/img/procgen-star.png" alt="Star-shaped room generation" loading="lazy"></figure>
+<figure class=""><img src="assets/img/procgen-gen2.png" alt="Second generation pass" loading="lazy"></figure>
+</div>
+<h2>Adding Randomness</h2>
+<p>Now that I was generating rooms, I needed to make a proper map, for this I started to select random locations in the array, checking if there was a room near it and, if so, create a room attached to this room. This created amazing maps, the only problem was that they were linear and had the problem that if the player didn’t choose the right path and checked “A” amount of rooms, they had to go back to the center and hope they selected the right path. This would make it that the player had the chance of forcibly exploring the entirety of the map before finding the final room, we didn’t want to force exploration but encourage it.</p>
+<figure class=""><img src="assets/img/procgen-gen3.png" alt="Randomised map generation" loading="lazy"></figure>
+<h2>Improving map generation</h2>
+<p>I wanted a more dynamic map, one that would have many paths that could lead to the end but also that would encourage the player to explore. For this I got inspired by “The Binding of Isaac” where I could add special rooms with chests or mini-bosses, here the chest rooms, mimic rooms, cookirooms, shops and medic rooms came to life.</p>
+<p>Since I wanted to encourage exploration I decided to move the spawn room to an edge of the map finding the distance from every room to the center, I would choose the furthest room from the center and make it the spawn room for the player. Then, the room that was furthest from this one would become the final room. After this happened I would access a dictionary of all the created rooms with their location, remove the spawn and final room from the array and select random rooms to make the special areas.</p>
+<p>Finally, to add a more dynamic feel to the map, I would give a chance for any room to create a door to an adjacent room that wasn’t previously attached making it possible to have many paths that would lead to the final room.</p>
+<h2>Final thoughts</h2>
+<p>I know very well that this isn’t the best way of making procedural generation and that there are ways to make it way better, for me what makes this my best work isn’t the finalized product but the process. I learnt a lot and improved as a designer and as a programmer when working on this system. I pushed myself to work on something that ended up being key to replayability of the game, it was hard but really fun. Due to circumstances that were out of my hands, I unfortunately don’t have pictures of every single part of the process to show exactly how everything happened so I tried my best to replicate them with the final version.</p>
+</article>
+<nav class="project-nav" aria-label="Projects"><a href="index.html">All</a><a href="ming-media.html">Ming Media</a><a href="dungeon-catering.html">Dungeon Catering</a><a href="studentstudio.html">Student Studio Initiative</a><a href="penglaststand.html">Peng Last Stand</a><a href="shadows.html">Shadows</a></nav>
+</main>
+<footer class="site-footer">
+  <div class="social"><a href="https://www.instagram.com/daniel_quintanam/" target="_blank" rel="noopener">Instagram</a> <a href="https://twitter.com/D_Quintana_M" target="_blank" rel="noopener">X / Twitter</a> <a href="https://www.linkedin.com/in/danielquintanam/" target="_blank" rel="noopener">LinkedIn</a></div>
+  <p>&copy; Daniel Quintana</p>
+</footer>
+<script src="assets/site.js"></script>
+</body>
+</html>

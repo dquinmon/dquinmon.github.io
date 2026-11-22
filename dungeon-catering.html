@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dungeon Catering | Daniel Quintana</title>
+<meta name="description" content="Final Project for Full Sail University. A game based on Enter the Gungeon with our own twist.">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <button class="menu-btn" aria-expanded="false" aria-controls="menu-panel">Menu</button>
+  <a class="logo" href="index.html" aria-label="Home"><img src="assets/img/logo.png" alt="DQ logo"></a>
+  <nav class="top-nav" aria-label="Main">
+    <a href="proceduralgeneration.html">Procedural Generation</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<div id="menu-panel" class="menu-panel" hidden>
+  <a href="index.html">Home</a>
+  <a href="proceduralgeneration.html">Procedural Generation</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+<main>
+<article class="project">
+<figure class="hero"><img src="assets/img/dc-main.png" alt="Dungeon Catering title art" loading="lazy"></figure>
+<h1>Dungeon Catering</h1>
+<p class="lede">Final Project for Full Sail University. A game based on Enter the Gungeon with our own twist.</p>
+<p><a class="btn" href="https://alexortiz.itch.io/dungeon-catering" target="_blank" rel="noopener">Download our Game!</a></p>
+<h2>Overview</h2>
+<figure class=""><img src="assets/img/dc-overview.jpg" alt="Dungeon Catering gameplay" loading="lazy"></figure>
+<p>In Dungeon Catering, you play as a chef that lies in a mysterious dungeon, in there you fight different enemies ranging from goblins to hell hounds. To beat them you use your cooking abilities and create upgrades to those weapons you find along the way. In this Top-Down shooter, rogue-like, dungeon-crawler, you must use your newly-found weapons and abilities to clear the levels and dive deeper into the dungeon to find the most rare of ingredients!</p>
+<dl class="facts"><div><dt>Platform</dt><dd>Windows</dd></div><div><dt>Engine</dt><dd>Unity3D</dd></div><div><dt>Language</dt><dd>C#</dd></div><div><dt>Development Time</dt><dd>5 Months</dd></div><div><dt>Team Size</dt><dd>8</dd></div><div><dt>Role</dt><dd>System Design, Level Design, Event Scripting, UI Design, QA</dd></div></dl>
+<figure class=""><img src="assets/img/dc-1.jpg" alt="Dungeon Catering combat" loading="lazy"></figure>
+<h2>Features I designed and built for “Dungeon Catering”</h2>
+<h3>Game &amp; System Design</h3>
+<figure class=""><img src="assets/img/dc-2.jpg" alt="Dungeon Catering inventory and UI" loading="lazy"></figure>
+<ul><li>Active Items with cooldowns</li><li>Inventory System where the player has two inventories, one for weapons and one for cooking ingredients</li><li>Debugging Menu</li><li>Combat Encounters</li><li>Checkpoint System for QA &amp; Debugging</li><li>Blank Mechanic (Removing all enemy bullets from the level)</li><li>Minimap camera &amp; movement</li><li>Procedural Generation of each level</li><li>Procedural path generation</li><li>Level Pacing by enemy spawning control</li><li>Fog of War</li></ul>
+<h3>Scripting</h3>
+<figure class=""><img src="assets/img/dc-4.jpg" alt="Dungeon Catering boss fight" loading="lazy"></figure>
+<ul><li>Procedural Generation of the levels</li><li>Static GameManager</li><li>Procedural path generation within the level</li><li>Control of enemy spawning to pace the difficulty of the game</li><li>Inventory System</li><li>Game Debugging menu</li><li>Checkpoints</li><li>Menu Transitions</li><li>Boss interactions</li><li>Enemy spawning &amp; Count within each section of the level</li><li>Minimap camera &amp; Movement</li><li>Fog of War</li><li>Saving and encoding to binary (Not implemented in the final game)</li></ul>
+<h2>Procedural Generation</h2>
+<p>One of the biggest Challenges was procedural generation, I wanted to show how it works. Here there’s a video of several generations and how each level is generated. It starts from the center, then selects two opposite rooms to be the start and finish of the level and fills the layout with prefabricated rooms.</p>
+<div class="video"><iframe src="https://www.youtube.com/embed/o9urFqEtbb8" title="Dungeon Catering procedural generation" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p>This is my best work so far, the thing I’m most proud of that I’ve done.</p>
+<p><a class="btn alt" href="proceduralgeneration.html">Making: procedural generation</a></p>
+</article>
+<nav class="project-nav" aria-label="Projects"><a href="index.html">All</a><a href="ming-media.html">Ming Media</a><a href="dungeon-catering.html" class=active>Dungeon Catering</a><a href="studentstudio.html">Student Studio Initiative</a><a href="penglaststand.html">Peng Last Stand</a><a href="shadows.html">Shadows</a></nav>
+</main>
+<footer class="site-footer">
+  <div class="social"><a href="https://www.instagram.com/daniel_quintanam/" target="_blank" rel="noopener">Instagram</a> <a href="https://twitter.com/D_Quintana_M" target="_blank" rel="noopener">X / Twitter</a> <a href="https://www.linkedin.com/in/danielquintanam/" target="_blank" rel="noopener">LinkedIn</a></div>
+  <p>&copy; Daniel Quintana</p>
+</footer>
+<script src="assets/site.js"></script>
+</body>
+</html>
